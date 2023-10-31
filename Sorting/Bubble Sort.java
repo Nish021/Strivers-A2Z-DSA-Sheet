@@ -21,3 +21,28 @@ class Solution
         }
     }
 }
+
+//Recursive Solution
+
+public class Solution {
+    public static void bubbleSort(int[] a, int n) {
+        if(n == 1)
+        return;
+
+        int count = 0;
+
+        for(int i = 0; i < n-1; i++){
+            if(a[i] > a[i+1]){
+                int t = a[i];
+                a[i] = a[i+1];
+                a[i+1] = t;
+                count++;
+            }
+        }
+        if(count == 0)
+        return;
+        
+        bubbleSort(a,n-1);
+    }
+
+}
